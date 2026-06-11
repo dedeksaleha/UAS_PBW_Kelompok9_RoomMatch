@@ -2,79 +2,136 @@
 
 ## Deskripsi Proyek
 
-RoomMatch adalah aplikasi berbasis web yang dibuat menggunakan framework Laravel dengan menerapkan konsep MVC (Model-View-Controller). Aplikasi ini membantu pengguna menemukan roommate atau teman sekamar yang sesuai berdasarkan lokasi, kebiasaan hidup, preferensi tempat tinggal, dan kebutuhan pribadi.
+RoomMatch adalah platform pencarian roommate berbasis web yang dirancang untuk membantu pengguna menemukan teman sekamar yang sesuai berdasarkan lokasi, kebiasaan hidup, pekerjaan, preferensi tempat tinggal, dan kebutuhan pribadi.
 
-Pengguna dapat membuat iklan pencarian roommate, mencari roommate lain, melakukan match dengan pengguna yang diminati, berkomunikasi melalui fitur chat, serta mengelola profil dan iklan mereka sendiri. Aplikasi dirancang dengan tampilan modern menggunakan kombinasi warna navy dan gold untuk memberikan pengalaman pengguna yang nyaman dan profesional.
+Mencari roommate yang cocok sering kali menjadi tantangan karena perbedaan gaya hidup, kebiasaan sehari-hari, maupun preferensi tempat tinggal. RoomMatch hadir sebagai solusi dengan menyediakan sistem pencarian, matching, dan komunikasi yang memungkinkan pengguna menemukan roommate yang lebih sesuai sebelum memutuskan untuk tinggal bersama.
 
----
+Aplikasi ini memungkinkan pengguna untuk membuat iklan pencarian roommate, mencari pengguna lain menggunakan sistem filter, mengirim permintaan match, berkomunikasi melalui fitur chat, serta mengelola profil dan preferensi mereka sendiri dalam satu platform terintegrasi.
 
-# Konsep MVC yang Diterapkan
 
-Project ini menerapkan konsep MVC (Model-View-Controller) pada framework Laravel.
+# Tujuan Pengembangan
 
-## 1. Model
+RoomMatch dikembangkan dengan tujuan:
 
-Model digunakan untuk menghubungkan aplikasi dengan database serta mengelola data aplikasi.
+* Membantu pengguna menemukan roommate yang sesuai dengan preferensi mereka.
+* Mempermudah proses pencarian teman sekamar secara online.
+* Mengurangi risiko ketidakcocokan antar roommate.
+* Menyediakan media komunikasi sebelum pengguna memutuskan untuk tinggal bersama.
+* Memberikan pengalaman pencarian roommate yang lebih aman, cepat, dan efisien.
 
-### Model yang digunakan:
 
-- `User.php`
-- `Iklan.php`
-- `Chat.php`
-- `RoomMatch.php`
+# Fitur Utama
 
-### Fungsi:
+## 1. Roommate Advertisement
 
-- Mengelola data pengguna
-- Menyimpan data iklan roommate
-- Menyimpan data percakapan
-- Mengelola data match antar pengguna
-- Mengatur relasi antar tabel
+Pengguna dapat membuat iklan pencarian roommate yang berisi informasi penting mengenai tempat tinggal dan preferensi roommate yang diinginkan.
 
----
+### Fitur
 
-## 2. View
+* Membuat iklan roommate
+* Mengedit iklan roommate
+* Menghapus iklan roommate
+* Menambahkan foto
+* Menambahkan deskripsi tempat tinggal
+* Mengatur preferensi roommate
 
-View digunakan untuk menampilkan antarmuka aplikasi kepada pengguna.
 
-### View yang digunakan:
+## 2. Matching System
 
-- `dashboard.blade.php`
-- `chat.blade.php`
-- `create-roommate.blade.php`
-- `edit-roommate.blade.php`
-- `profile/index.blade.php`
-- `layouts/app.blade.php`
+Sistem matching digunakan untuk memastikan bahwa kedua pengguna memiliki ketertarikan yang sama sebelum dapat melanjutkan komunikasi.
 
-### Fungsi:
+### Status Match
 
-- Menampilkan dashboard roommate
-- Menampilkan daftar roommate
-- Menampilkan halaman chat
-- Menampilkan profil pengguna
-- Menampilkan halaman pembuatan dan edit iklan
+* Pending
+* Accepted
+* Rejected
+* Expired
 
----
+### Aturan Match
 
-## 3. Controller
+* Setiap pengguna hanya dapat memiliki satu match aktif.
+* Match akan otomatis berakhir setelah 24 jam jika tidak direspon.
+* Pengguna yang telah memiliki match aktif tidak dapat mengirim atau menerima match baru.
+* Chat hanya dapat dilakukan setelah match diterima.
 
-Controller digunakan untuk mengatur logika aplikasi dan penghubung antara Model dan View.
+### Manfaat
 
-### Controller yang digunakan:
+* Mengurangi spam permintaan roommate.
+* Memastikan komunikasi hanya terjadi antar pengguna yang benar-benar tertarik.
 
-- `DashboardController.php`
-- `ChatController.php`
-- `ProfileController.php`
 
-### Fungsi:
+## 3. Chat System
 
-- Menampilkan roommate yang tersedia
-- Mengatur sistem pencarian dan filter
-- Mengelola fitur chat
-- Mengelola data profil pengguna
-- Mengatur sistem match roommate
+Setelah match diterima, pengguna dapat berkomunikasi secara langsung melalui fitur chat.
 
----
+### Fitur Chat
+
+* Pengiriman pesan
+* Penerimaan pesan
+* Unread message notification
+* Notification badge
+* Active conversation
+* Contact sidebar
+
+### Tujuan
+
+* Mempermudah proses perkenalan.
+* Membantu pengguna mendiskusikan detail tempat tinggal.
+* Menjadi sarana komunikasi sebelum menjadi roommate.
+
+
+## 4. Smart Filtering
+
+RoomMatch menyediakan fitur pencarian yang memungkinkan pengguna menemukan roommate yang sesuai dengan kebutuhan mereka.
+
+### Filter yang Tersedia
+
+* Lokasi
+* Pekerjaan
+* Kebiasaan hidup
+* Preferensi roommate
+
+### Tujuan
+
+* Mempercepat pencarian roommate.
+* Menampilkan hasil yang lebih relevan.
+* Mengurangi waktu pencarian.
+
+
+## 5. Profile Management
+
+Setiap pengguna memiliki profil yang dapat disesuaikan sesuai kebutuhan.
+
+### Data Profil
+
+* Nama
+* Foto Profil
+* Lokasi
+* Pekerjaan
+* Deskripsi Diri
+* Kebiasaan Hidup
+* Preferensi Roommate
+
+### Fitur
+
+* Mengubah foto profil
+* Mengedit data pribadi
+* Mengatur preferensi roommate
+* Mengelola informasi akun
+
+
+## 6. Notification System
+
+Aplikasi menyediakan berbagai notifikasi untuk membantu pengguna mengetahui aktivitas penting.
+
+### Jenis Notifikasi
+
+* Match baru
+* Match diterima
+* Match ditolak
+* Pesan baru
+* Pesan belum dibaca
+
 
 # Struktur Direktori
 
@@ -109,317 +166,277 @@ database/
 └── seeders/
 ```
 
----
 
 # Skema Database
 
-## Tabel `users`
+## Tabel Users
 
-| Field | Type |
-|---------|---------|
-| id | bigint |
-| name | varchar |
-| email | varchar |
-| password | varchar |
-| pekerjaan | varchar |
-| lokasi | varchar |
-| kebiasaan | text |
+| Field      | Type      |
+| ---------- | --------- |
+| id         | bigint    |
+| name       | varchar   |
+| email      | varchar   |
+| password   | varchar   |
+| pekerjaan  | varchar   |
+| lokasi     | varchar   |
+| kebiasaan  | text      |
 | created_at | timestamp |
 | updated_at | timestamp |
 
-## Tabel `iklans`
+## Tabel Roommate Posts
 
-| Field | Type |
-|---------|---------|
-| id | bigint |
-| user_id | foreign key |
-| judul | varchar |
-| deskripsi | text |
-| lokasi | varchar |
-| preferensi_roommate | text |
-| foto | varchar |
-| created_at | timestamp |
-| updated_at | timestamp |
+| Field               | Type        |
+| ------------------- | ----------- |
+| id                  | bigint      |
+| user_id             | foreign key |
+| judul               | varchar     |
+| deskripsi           | text        |
+| lokasi              | varchar     |
+| preferensi_roommate | text        |
+| foto                | varchar     |
+| created_at          | timestamp   |
+| updated_at          | timestamp   |
 
-## Tabel `room_matches`
+## Tabel Matches
 
-| Field | Type |
-|---------|---------|
-| id | bigint |
-| sender_id | foreign key |
+| Field       | Type        |
+| ----------- | ----------- |
+| id          | bigint      |
+| sender_id   | foreign key |
 | receiver_id | foreign key |
-| status | enum (pending, accepted, rejected, expired) |
-| expired_at | timestamp |
-| created_at | timestamp |
-| updated_at | timestamp |
+| status      | enum        |
+| expired_at  | timestamp   |
+| created_at  | timestamp   |
+| updated_at  | timestamp   |
 
-## Tabel `chats`
+## Tabel Chats
 
-| Field | Type |
-|---------|---------|
-| id | bigint |
-| sender_id | foreign key |
+| Field       | Type        |
+| ----------- | ----------- |
+| id          | bigint      |
+| sender_id   | foreign key |
 | receiver_id | foreign key |
-| message | text |
-| is_read | boolean |
-| created_at | timestamp |
-| updated_at | timestamp |
+| message     | text        |
+| is_read     | boolean     |
+| created_at  | timestamp   |
+| updated_at  | timestamp   |
 
----
 
-# Fitur Aplikasi
+# Alur Penggunaan Aplikasi
 
-## CRUD Iklan Roommate
+### 1. Registrasi dan Login
 
-Pengguna dapat:
+Pengguna membuat akun dan masuk ke dalam sistem.
 
-- Membuat iklan roommate
-- Mengedit iklan roommate
-- Menghapus iklan roommate
-- Mengunggah foto roommate
-- Mengatur preferensi roommate
+↓
 
-## Matching System
+### 2. Melengkapi Profil
 
-Pengguna dapat:
+Pengguna mengisi informasi pribadi dan preferensi roommate.
 
-- Mengirim permintaan match
-- Menerima match
-- Menolak match
-- Melihat status match
-- Mendapatkan notifikasi match
+↓
 
-Status match:
+### 3. Membuat Iklan Roommate
 
-- Pending
-- Accepted
-- Rejected
-- Expired (24 jam)
+Pengguna membuat postingan pencarian roommate.
 
-Ketentuan:
+↓
 
-- User hanya dapat memiliki 1 match aktif.
-- User tidak dapat mengirim atau menerima match baru setelah match diterima.
+### 4. Mencari Roommate
 
-## Real-Time Style Chat
+Pengguna mencari roommate menggunakan fitur filter.
 
-Pengguna dapat:
+↓
 
-- Mengirim pesan
-- Menerima pesan
-- Melihat kontak aktif
-- Melihat unread message
-- Mendapatkan notifikasi chat
-- Mengakses sidebar percakapan
+### 5. Mengirim Permintaan Match
 
-## Smart Filtering
+Pengguna mengirim match kepada roommate yang diminati.
 
-Pengguna dapat mencari roommate berdasarkan:
+↓
 
-- Lokasi
-- Pekerjaan
-- Kebiasaan hidup
-- Preferensi roommate
+### 6. Proses Persetujuan Match
 
-## Profile Management
+Penerima dapat menerima atau menolak permintaan tersebut.
 
-Pengguna dapat:
+↓
 
-- Mengubah foto profil
-- Mengedit data diri
-- Mengubah preferensi roommate
-- Mengelola iklan roommate
+### 7. Memulai Chat
 
-## Dashboard
+Apabila match diterima, kedua pengguna dapat mulai berkomunikasi.
 
-Dashboard menampilkan:
+↓
 
-- Daftar roommate
-- Status match aktif
-- Notifikasi chat
-- Filter roommate
-- Pencarian roommate
+### 8. Menjadi Roommate
 
----
+Pengguna dapat melanjutkan proses pencarian tempat tinggal bersama setelah menemukan kecocokan.
+
 
 # Cara Menjalankan Proyek
 
 ## 1. Clone Repository
 
+
+
 ```bash
-git clone https://github.com/username/roommatch.git
+
+git clone https://github.com/username/RoomMatch.git
+
 ```
+
+
 
 ## 2. Masuk ke Folder Project
 
+
+
 ```bash
-cd roommatch
+
+cd RoomMatch
+
 ```
+
+
 
 ## 3. Install Dependency
 
+
+
 ```bash
+
 composer install
+
 ```
+
+
 
 ## 4. Install NPM Dependency
 
+
+
 ```bash
+
 npm install
+
 ```
+
+
 
 ## 5. Copy File Environment
 
+
+
 ```bash
+
 cp .env.example .env
+
 ```
+
+
 
 ## 6. Generate Application Key
 
+
+
 ```bash
+
 php artisan key:generate
+
 ```
+
+
 
 ## 7. Atur Database di File .env
 
+
+
 ```env
-DB_DATABASE=roommatch
+
+DB_DATABASE=RoomMatch
+
 DB_USERNAME=root
+
 DB_PASSWORD=
+
 ```
+
+
 
 ## 8. Jalankan Migration
 
+
+
 ```bash
+
 php artisan migrate
+
 ```
+
+
 
 ## 9. Jalankan Vite
 
+
+
 ```bash
+
 npm run dev
+
 ```
+
+
 
 ## 10. Jalankan Server
 
+
+
 ```bash
+
 php artisan serve
+
 ```
+
+
 
 ## 11. Buka Browser
 
+
+
 ```bash
+
 http://127.0.0.1:8000
+
 ```
 
----
-
-# Alur Kerja Aplikasi
-
-## 1. User Registrasi dan Login
-
-Data pengguna disimpan ke tabel `users`.
-
-↓
-
-## 2. User Membuat Iklan Roommate
-
-Data roommate disimpan ke tabel `iklans`.
-
-↓
-
-## 3. User Mencari Roommate
-
-Sistem melakukan pencarian berdasarkan filter yang dipilih.
-
-↓
-
-## 4. User Mengirim Match
-
-Data disimpan ke tabel `room_matches`.
-
-↓
-
-## 5. Match Diterima
-
-Status berubah menjadi `accepted`.
-
-↓
-
-## 6. User Mulai Chat
-
-Pesan disimpan ke tabel `chats`.
-
-↓
-
-## 7. User Menjadi Roommate
-
-Sistem mengunci match aktif dan tidak menerima match baru.
-
----
-
-# Routes
-
-| Method | Route | Fungsi |
-|----------|----------|----------|
-| GET | /dashboard | Menampilkan dashboard |
-| GET | /roommates | Menampilkan daftar roommate |
-| GET | /roommates/create | Form tambah roommate |
-| POST | /roommates | Menyimpan roommate |
-| GET | /roommates/{id}/edit | Form edit roommate |
-| PUT | /roommates/{id} | Update roommate |
-| DELETE | /roommates/{id} | Hapus roommate |
-| POST | /match/send | Mengirim match |
-| POST | /match/accept | Menerima match |
-| POST | /match/reject | Menolak match |
-| GET | /chat | Menampilkan halaman chat |
-| POST | /chat/send | Mengirim pesan |
-| GET | /profile | Menampilkan profil |
-| PUT | /profile/update | Update profil |
-
----
-
-# Data Sample
-
-## User
-
-| Nama | Lokasi | Pekerjaan |
-|--------|--------|--------|
-| Andi | Medan | Mahasiswa |
-| Sarah | Medan | Karyawan |
-
-## Roommate Post
-
-| Judul | Lokasi | Preferensi |
-|--------|--------|--------|
-| Cari Teman Kos | Medan Johor | Tidak Merokok |
-| Roommate Apartemen | Medan Kota | Mahasiswa |
-
-## Match
-
-| Pengirim | Penerima | Status |
-|-----------|-----------|-----------|
-| Andi | Sarah | Accepted |
-
----
 
 # Teknologi yang Digunakan
 
-- Laravel 13
-- PHP 8.3
-- MySQL
-- HTML5
-- CSS3
-- JavaScript
-- Blade Template Engine
-- Laravel Breeze Authentication
-- Vite
-- Composer
-- Laragon / XAMPP
-- MVC Architecture
+## Backend
 
----
+* Laravel 13
+* PHP 8.3
+
+## Frontend
+
+* Blade Template Engine
+* HTML5
+* CSS3
+* JavaScript
+
+## Database
+
+* MySQL
+
+## Authentication
+
+* Laravel Breeze
+
+## Development Tools
+
+* Composer
+* Vite
+* Laragon / XAMPP
+
 
 # Author
 
-Dibuat untuk memenuhi tugas Mata Kuliah Pemrograman Berbasis Web dengan implementasi konsep MVC menggunakan framework Laravel. Project ini mengimplementasikan fitur Roommate Finder, Matching System, Real-Time Style Chat, Smart Filtering, serta User Generated Roommate Card untuk membantu pengguna menemukan teman sekamar yang sesuai dengan preferensi mereka.
+RoomMatch dikembangkan sebagai platform pencarian roommate yang menggabungkan sistem matching, komunikasi, dan manajemen profil dalam satu aplikasi. Proyek ini berfokus pada peningkatan pengalaman pengguna dalam menemukan teman sekamar yang sesuai melalui proses yang lebih terstruktur, aman, dan efisien. Dibuat oleh Kelompok 9 sebagai proyek akhir Mata Kuliah Pemrograman Berbasis Web. 
