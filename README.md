@@ -1,5 +1,3 @@
-<img width="1600" height="900" alt="Profile" src="https://github.com/user-attachments/assets/ae4f1e35-1c2f-45e3-8f0b-22fa1569c4d5" /># 🏠 RoomMatch
-
 ## Deskripsi Proyek
 
 RoomMatch adalah platform pencarian roommate berbasis web yang dirancang untuk membantu pengguna menemukan teman sekamar yang sesuai berdasarkan lokasi, kebiasaan hidup, pekerjaan, preferensi tempat tinggal, dan kebutuhan pribadi.
