@@ -1,4 +1,4 @@
-# 🏠 RoomMatch
+<img width="1600" height="900" alt="Profile" src="https://github.com/user-attachments/assets/ae4f1e35-1c2f-45e3-8f0b-22fa1569c4d5" /># 🏠 RoomMatch
 
 ## Deskripsi Proyek
 
@@ -434,6 +434,21 @@ http://127.0.0.1:8000
 * Composer
 * Vite
 * Laragon / XAMPP
+
+
+# Screenshot tampilan aplikasi
+
+## Dashboard
+<img width="1600" height="900" alt="Dashboard" src="https://github.com/user-attachments/assets/90b6f9f2-fe28-425d-81c0-04b20a47082a" />
+
+## Dashboard-Iklan
+<img width="1600" height="900" alt="Dashboard-Iklan" src="https://github.com/user-attachments/assets/95bc343d-5eea-48f6-abfb-ca004d61c0ad" />
+
+## Chat Room
+<img width="1600" height="900" alt="Chat" src="https://github.com/user-attachments/assets/a3d9dab3-7ebe-4c01-8f28-89434be0b703" />
+
+## Profile
+<img width="1600" height="900" alt="Profile" src="https://github.com/user-attachments/assets/e03c3df0-d6ee-493d-8ef6-0d38a935f271" />
 
 
 # Author
